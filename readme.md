@@ -1,1 +1,1 @@
-The backend for the code is written using django framework. Currently i have not made the frontend for this app/website. I will be writing API'S for this backend code to connect with my React Native Frontend.
+The backend for the app/website is written using django framework. Currently i have not made the frontend for this app/website. I will be writing API'S for this backend code to connect with my React Native Frontend.
