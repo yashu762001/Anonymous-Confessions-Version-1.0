@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Your Confession</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+
+<form action = "/myapp/conf" method = "POST">
+    {% csrf_token %}
+
+
+    Title <input type = "text" name = "title" value = "{{obj1.title}}" required> <br> <br>
+    Gender <input type = "text" name = "gender" value = "{{obj1.gender}}" required> <br> <br>
+    College <input type = "text" name = "college" value = "{{obj1.college}}" required> <br> <br>
+   Confession <textarea id = "i1" name = "confession" maxlength="2500" rows="10" cols="30"  required> </textarea> <br> <br><br>
+
+    <input type = "submit" name = "submit" placeholder="Update">
+</form>
+
+</body>
+
+<script>
+    var y = {% autoescape on %}  "{{ obj1.confession}}" {% endautoescape %}
+    document.getElementById('i1').value = y
+</script>
+</html>

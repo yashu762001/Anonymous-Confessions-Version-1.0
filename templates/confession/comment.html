@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Comments</title>
+</head>
+<body>
+
+{% for obj in obj1 %}
+
+<h3> {{obj.name}}</h3>
+<p> {{obj.comment}}</p>
+
+<form action = "/myapp/confess/replies/{{obj.id}}" method="post">
+    {% csrf_token %}
+    <input type = "text" name = "name" placeholder = "Name"> <br>
+    <input type = "text" name = "reply" placeholder="Your Take On the Comment"> <br> <br>
+    <input type = "submit" value = "Reply">
+</form>
+
+<a href = "/myapp/confess/replies/{{obj.id}}"> Replies</a>
+{% endfor %}
+</body>
+</html>

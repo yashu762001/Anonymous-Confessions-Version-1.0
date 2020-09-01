@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gender</title>
+</head>
+<body>
+
+<h1> Search Confessions By Gender</h1>
+
+<form action = "/myapp/gender/" method = "post">
+    {% csrf_token %}
+    <label for="gender">Choose Your Gender:</label>
+  <select name="gender" id="gender" multiple>
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+    <option value="Other">Other Gender</option>
+  </select>
+    <input type = "submit" name = "submit">
+
+</form>
+
+</body>
+</html>

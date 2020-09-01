@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conf Home Page</title>
+</head>
+<body>
+
+<a href="/myapp/college"> Sort by College</a> <br>
+<a href = "/myapp/gender"> Sort by Gender</a>
+
+<h1> CONFESSIONS</h1>
+ {% for obj in obj1 %}
+    <h2> {{obj.college}}</h2>
+    <h3> {{obj.title}}</h3>
+    <h3>{{obj.gender}}</h3>
+    <h3> {{obj.date}}</h3>
+
+<p> {{obj.confession}}</p>
+<form action = "/myapp/like/{{obj.id}}" method="POST">
+    {% csrf_token %}
+    <input type = "submit" value = "Like">
+</form>
+<h4> Likes : {{obj.post_likes}}</h4>
+<a href = "/myapp/confess/comments/{{obj.id}}"> Comments</a>
+<form action = "/myapp/confess/comments/{{obj.id}}" method = "POST">
+    {% csrf_token %}
+    <input type = "text" name = "name" placeholder="Enter Name with which you want to comment(Make Sure it is not your real name)" width = "150px" height = "50px" >
+    <input type = "text" name = "comment" placeholder="Add Your Comment" width = "50px" height = "50px">
+    <input type = "submit" value = "Add Comment">
+</form>
+{% endfor %}
+
+</body>
+</html>

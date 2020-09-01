@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confession Self</title>
+</head>
+<body>
+<a href = "/myapp/conf"> Back To Confessions</a>
+<h2> {{obj.college}}</h2>
+    <h3> {{obj.title}}</h3>
+    <h3>{{obj.gender}}</h3>
+    <h3> {{obj.date}}</h3>
+
+<p> {{obj.confession}}</p>
+<form action = "/myapp/like/{{obj.id}}" method="POST">
+    {% csrf_token %}
+    <input type = "submit" value = "Like">
+</form>
+<h4> Likes : {{obj.post_likes}}</h4>
+
+</body>
+</html>

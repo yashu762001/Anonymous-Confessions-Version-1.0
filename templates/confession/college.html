@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>College</title>
+</head>
+<body>
+
+<h1> Write the college whose confessions you are interested in?? </h1>
+
+<form action="/myapp/college/" method="POST">
+    {% csrf_token %}
+  <label for="college">Choose The College:</label>
+  <select name="college" id="college" multiple>
+    <option value="IIT Madras">IIT Madras</option>
+    <option value="IIT Bombay">IIT Bombay</option>
+    <option value="IIT Kanpur">IIT Kanpur</option>
+    <option value="IIT Kharagpur">IIT Kharagpur</option>
+      <option value="IIT Roorkee">IIT Roorkee</option>
+      <option value="IIT BHU">IIT BHU</option>
+      <option value="IIT Delhi">IIT Delhi </option>
+      <option value="IIT Guwahati">IIT Guwahati</option>
+      <option value="ISM">ISM</option>
+      <option value="Bits Pilani">Bits Pilani</option>
+      <option value="IIT Jodhpur">IIT Jodhpur</option>
+      <option value="NIT Trichy">NIT Trichy</option>
+      <option value="DTU">DTU</option>
+  </select>
+    <input type = "submit" name = "submit">
+    </form>
+
+</body>
+</html>
