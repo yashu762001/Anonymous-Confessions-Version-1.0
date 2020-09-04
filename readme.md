@@ -4,5 +4,5 @@
 
 Installs to be made:
 <h3>pip install django </h3>
-<h3>pip install restframework</h3>
+<h3>pip install djangorestframework</h3>
 
