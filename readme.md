@@ -5,4 +5,8 @@
 Installs to be made:
 <h3>pip install django </h3>
 <h3>pip install djangorestframework</h3>
+<h3>pip install django-filter </h3>
+<h3> pip install markdown </h3>
+
+<h2> This is a open source project. Good Contributions are always welcomed. </h2>
 
