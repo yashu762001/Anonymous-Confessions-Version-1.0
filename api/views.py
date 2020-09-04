@@ -5,7 +5,7 @@ from ..models import Confession, Comment, Reply
 from .serializers import ConfessionSerializer
 from rest_framework.views import APIView
 
-
+# GET REQUEST TO RETRIEVE ALL THE CONFESSIONS FROM THE DATABASE
 @api_view(['GET'])
 def conf(request):
     try:
@@ -28,7 +28,7 @@ def conf(request):
 
         return Response(status=status.HTTP_404_NOT_FOUND)
 
-
+# POST REQUEST TO WRITE CONFESSIONS
 @api_view(['POST'])
 def write_confession(request):
     try:
@@ -40,7 +40,7 @@ def write_confession(request):
     except Exception as e:
         return Response(status=status.HTTP_400_BAD_REQUEST)
 
-
+# POST REQUEST TO WRITE COMMENTS ON THE POSTS
 @api_view(['POST'])
 def write_comment(request, post_id):
     try:
@@ -51,7 +51,7 @@ def write_comment(request, post_id):
     except Exception as e:
         return Response(status=status.HTTP_400_BAD_REQUEST)
 
-
+# RETREIVING ALL THE CONFESSIONS OF A PARTICULAR GENDER
 @api_view(['GET'])
 def sort_by_gender(request, gender):
     try:
@@ -71,7 +71,7 @@ def sort_by_gender(request, gender):
     except Exception as e:
         return Response(status=status.HTTP_400_BAD_REQUEST)
 
-
+# RETRIEVING ALL THE CONFESSIONS OF A PARTICULAR COLLEGE
 @api_view(['GET'])
 def sort_by_college(request, college):
     try:
@@ -91,7 +91,7 @@ def sort_by_college(request, college):
     except Exception as e:
         return Response(status=status.HTTP_400_BAD_REQUEST)
 
-
+#REPLYING TO A PARTICULAR COMMENT
 @api_view(['POST'])
 def write_reply(request, comment_id):
     try:
@@ -121,7 +121,7 @@ def all_comments(request):
     except Exception as e:
         return Response(status=status.HTTP_400_BAD_REQUEST)
 
-
+# TOTAL LIKES ON A CONFESSION
 @api_view(['GET'])
 def likes(request, post_id):
     try:
